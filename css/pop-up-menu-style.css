@@ -1,0 +1,123 @@
+navbar ul { 
+	display: none; /*необходимо скрыть список с подпунктами*/
+	position: absolute;
+	top: 100%; /*чтобы абсолютно позиционированное подменю отображалось точно под ссылкой*/
+}
+navbar li:hover ul { 
+	display: block; /*Для отображения подпунктов нам нужно чтобы при наведении на элемент <li> список снова был преобразован в блочный элемент*/
+}
+
+navbar, navbar ul { /*Убираем у обоих списков отступы и маркеры, установленные по умолчанию*/
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+navbar li { 
+	float: left; /*Элементы списка с навигационными ссылками делаем плавающими, формируя горизонтальное меню*/
+	position: relative; /*чтобы наше выпадающее подменю не смещало контент, расположенный под панелью навигации, вниз*/
+}
+navbar ul li { 
+	float: none; /*чтобы элементы списка отображались друг под другом*/
+}
+
+header{
+/*margin-top: 200px;*/
+font-family: Inconsolata, sans-serif;
+}
+.dws-menu *{
+ margin: 0;
+ padding: 0;
+}
+.dws-menu ul, 
+.dws-menu ol{
+list-style: none;
+}	
+.dws-menu > ul{
+display: flex;
+justify-content: center;
+}
+
+.dws-menu > ul li a{
+display: block;
+background: #ececed;
+padding: 15px 30px 15px 40px;
+font-size: 14px;
+color: #454547;
+text-decoration: none;
+text-transform: uppercase;
+ transition: all 0.3s ease;
+}
+
+.dws-menu > ul li {
+	position:relative;
+}
+
+.dws-menu > ul li > a i.fa, i.fas{
+position: absolute;
+top: 15px;
+left: 13px;
+font-size: 18px;
+}
+
+.dws-menu > ul li:first-child{
+ border-left: 1.5px solid #b2b3b5;;
+}
+
+
+.dws-menu > ul li:last-child{
+ border-right: 1.5px solid #b2b3b5;;
+}  
+
+.dws-menu > ul li > ul li:first-child{ /*второй уровень*/
+ border-left: 1px solid #c7c8ca;
+}
+
+.dws-menu > ul li > ul li:last-child{ /*второй уровень*/
+ border-right: 1px solid #c7c8ca;
+} 
+
+.dws-menu > ul li{
+ position: relative;
+ border-right: 1px solid #c7c8ca;
+}   
+
+.dws-menu li a:hover{
+ background: #454547;
+ color: #ffffff;
+ box-shadow: 1px 5px 10px -5px black;
+ transition: all 0.3s ease;
+}    
+
+/*sub menu*/
+.dws-menu li ul{
+ position: absolute;
+ min-width: 150px;
+}   
+
+.dws-menu li > ul li{
+ border: 1px solid #c7c8ca;
+}   
+
+.dws-menu li > ul li a{
+ padding: 10px;
+ text-transform: none;
+ background: #e4e4e5;
+} 
+
+
+.dws-menu li > ul li ul{
+ position: absolute;
+ right: -150px;
+ top: 0;
+} 
+.dws-menu li ul{
+ position: absolute;
+ min-width: 150px;
+ display: none;
+}   
+
+
+.dws-menu li:hover > ul{
+ display: block;
+}  
